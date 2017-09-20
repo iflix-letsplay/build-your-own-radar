@@ -452,7 +452,24 @@ const Radar = function (size, radar) {
       .append('div')
       .attr('class', 'footer-content')
       .append('p')
-      .html('<a href="https://docs.google.com/spreadsheets/d/1y6MQS-9F9bQtIxwf4-eNKsR_7qsWMpuA89tSKSk4qhs/edit#gid=0">Spreadsheet Source Link</a>');
+      .html(
+  '<a href="https://docs.google.com/spreadsheets/d/1y6MQS-9F9bQtIxwf4-eNKsR_7qsWMpuA89tSKSk4qhs/edit#gid=0">Spreadsheet Source Link</a>' +
+  `<h3>Quadrants</h3>
+  <ul>
+    <li><strong>Programming Languages and Frameworks.</strong> (This was just languages but we rolled frameworks into here with the October 2012 radar).</li>
+    <li><strong>Tools</strong> which can be: components, such as databases, software development tools, such as versions control systems; or more generic categories of tools, such as the notion of polyglot persistence.</li>
+    <li><strong>Platforms</strong> are things that we build software on top of: mobile technologies like Android, virtual platforms like the JVM, or generic kinds of platforms like hybrid clouds.</li>
+    <li><strong>Techniques</strong> include elements of a software development process, such as experience design; and ways of structuring software, such as micro-services.</li>
+  </ul>
+
+  <h3>Rings</h3>
+  <ul>
+    <li>The <strong>Adopt</strong> Ring represents blips that we think you should be using now. We don't say that you should use these for every project; any tool should only be used in an appropriate context. However we do think that a blip in the adopt ring represents something where there is no doubt that it's proven and mature for use.</li>
+    <li>The <strong>Trial</strong> Ring is for blips that we think are ready for use, but not as completely proven as those in the adopt ring. So for most organizations we think you should use these on a trial basis, to decide whether they should be part of your toolkit. Typically we are happy to use trial blips now, but we realize that most readers will be more cautious than us.</li>
+    <li>The <strong>Assess</strong> Ring are things that you should look at closely, but not necessarily trial yet - unless you think they would be a particularly good fit for you. Typically blips in the assess ring are things that we are currently trialling, on our projects.</li>
+    <li>The <strong>Hold</strong> Ring is for things that are getting attention in the industry, but we don't think are ready for use. Sometimes this is because we don't think they are mature enough yet, sometimes it means we think they are irredeemably flawed. We don't have an "avoid" ring, but we do throw things in the hold ring that we wish our clients wouldn't use.</li>
+  </ul>`
+      );
   }
 
   function mouseoverQuadrant(order) {
