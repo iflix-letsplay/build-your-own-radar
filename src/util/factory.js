@@ -19,6 +19,10 @@ const ContentValidator = require('./contentValidator');
 const Sheet = require('./sheet');
 const ExceptionMessages = require('./exceptionMessages');
 
+const config = {
+    defaultSheetId: '1y6MQS-9F9bQtIxwf4-eNKsR_7qsWMpuA89tSKSk4qhs'
+}
+
 
 const GoogleSheet = function (sheetReference, sheetName) {
     var self = {};
@@ -156,6 +160,9 @@ const GoogleSheetInput = function () {
 
     self.build = function () {
         var queryParams = QueryParams(window.location.search.substring(1));
+
+        // use a default sheetId preventing root page from showing
+        queryParams.sheetId = queryParams.sheetId || config.defaultSheetId
 
         if (queryParams.sheetId) {
             var sheet = GoogleSheet(queryParams.sheetId, queryParams.sheetName);

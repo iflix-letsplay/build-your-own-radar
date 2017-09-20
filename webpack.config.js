@@ -19,6 +19,8 @@ if (isDev) {
     devtool = 'source-map';
 }
 
+const publicPath = isDev ? '/' : './'
+
 let plugins = [
     new ExtractTextPlugin('[name].[hash].css'),
     new HtmlWebpackPlugin({
@@ -54,7 +56,7 @@ module.exports = {
 
     output: {
         path: buildPath,
-        publicPath: './',
+        publicPath: publicPath,
         filename: '[name].[hash].js'
     },
 
